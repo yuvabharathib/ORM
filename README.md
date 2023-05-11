@@ -1,54 +1,59 @@
 # Ex02 Django ORM Web Application
 
-## AIM
+# AIM
 To develop a Django application to store and retrieve data from a student database using Object Relational Mapping(ORM).
 
-## Entity Relationship Diagram
+# Entity Relationship Diagram
+![image](https://github.com/yuvabharathib/ORM/assets/113497404/32a4d0b0-de4c-4f74-8cb2-352c905d6317)
 
 
-
-## DESIGN STEPS
-
+# DESIGN STEPS
 ### STEP 1:
-Clone the problem from the github
+Clone the repository from github.
 
 ### STEP 2:
-Create a new app
-
+Create an admin interfacefor Django.
 
 ### STEP 3:
-Enter the code for admin.py and model.py
+Create an app and edit settings.py.
 
-### STEP 4: 
-Execute Django admin and create 10 employees
+### STEP 4:
+Makemigrations and migrate the changes.
 
-## PROGRAM
+### STEP 5:
+Create admin user and write pythoncode for admin and models.
+
+### STEP 6:
+Make all the migrations to 'myapp'.
+
+### STEP 7:
+Create an student database with 10 feilds using runserver command.
+
+# PROGRAM
 ```
-from django.contrib import admin
-from .models import Employee,EmployeeAdmin
-admin.site.register(Employee,EmployeeAdmin)
+admin.py 
 
-Model.py
+from django.contrib import admin
+from .models import student,studentAdmin 
+admin.site.register(student,studentAdmin)
+
+models.py
 
 from django.db import models
 from django.contrib import admin
-class Employee (models.Model): 
-    eid=models.CharField(max_length=20, help_text="Employee ID") 
-    name=models.CharField(max_length=100) 
-    salary=models.IntegerField()
-    age=models.IntegerField()
-    email=models. EmailField()
+class student (models.Model):
+    sid=models.CharField(max_length=28)
+    name=models.CharField(max_length=30)
+    regno=models.IntegerField()
+    marks=models.IntegerField()
+    email=models.EmailField()
 
-class EmployeeAdmin (admin. ModelAdmin):
-    list_display=('eid','name','salary','age','email')
+class studentAdmin(admin.ModelAdmin):
+    list_display=('sid','name','regno','marks','email')
 ```
 
+# OUTPUT
+![image](https://github.com/yuvabharathib/ORM/assets/113497404/4eb53bdf-9cd4-4c57-8d0e-3b73fd0a6a35)
 
-## OUTPUT
-![image](https://user-images.githubusercontent.com/113497404/234176947-f5ea50e7-de51-49fc-9267-fc0ea8144931.png)
-
-
-
-
-## RESULT
+# RESULT
 The code executed successfully
